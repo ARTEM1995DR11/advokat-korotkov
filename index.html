@@ -3,92 +3,424 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Адвокат Кинешма – Коротков Артём Андреевич | Иваново</title>
-  <meta name="description" content="Адвокат Кинешма, Иваново. Коротков Артём Андреевич — уголовные, гражданские и административные дела. Консультации, исковые заявления, представительство в суде." />
-  <meta property="og:title" content="Адвокат Кинешма – Коротков Артём Андреевич" />
-  <meta property="og:description" content="Юридическая помощь в Кинешме и Иваново: уголовные, гражданские, административные дела. Консультации и представительство." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://artem1995dr11.github.io/advokat-korotkov/" />
-  <meta name="robots" content="index,follow" />
+  <title>Адвокат Коротков Артём Андреевич | Защита и консультации</title>
+  <meta name="description" content="Адвокат Коротков Артём Андреевич. Уголовные, гражданские, административные дела. Консультации, подготовка документов, представительство. Тел.: 8‑961‑116‑48‑32." />
+  <meta name="format-detection" content="telephone=no" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64'%3E%3Ctext y='50' x='8' font-size='48'%3E⚖️%3C/text%3E%3C/svg%3E">
   <style>
-    body{font-family:sans-serif;margin:0;padding:0;background:#f8fafc;color:#0f172a}
-    header,section,footer{padding:20px;max-width:960px;margin:auto}
-    h1,h2,h3{margin:0 0 10px}
-    .card{background:white;padding:16px;border-radius:12px;margin-bottom:12px;box-shadow:0 2px 6px rgba(0,0,0,.08)}
-    .grid{display:grid;gap:12px}
-    @media(min-width:700px){.grid.cols-3{grid-template-columns:repeat(3,1fr)}.grid.cols-2{grid-template-columns:repeat(2,1fr)}}
-    .btn{display:inline-block;padding:10px 16px;border-radius:8px;background:#2563eb;color:white;text-decoration:none}
-    footer{text-align:center;color:#475569;font-size:14px;margin-top:40px}
+    :root{
+      --bg:#ffffff;--text:#0f172a;--muted:#475569;--brand:#2b6cb0;--brand-2:#1e40af;
+      --surface:#f1f5f9;--ring:#93c5fd;--radius:14px;--shadow:0 8px 32px rgba(2,6,23,.12);
+    }
+    @media (prefers-color-scheme: dark){
+      :root{--bg:#0b1220;--text:#e5e7eb;--muted:#96a0b5;--brand:#60a5fa;--brand-2:#3b82f6;--surface:#0f172a;--ring:#60a5fa;}
+      body{background:linear-gradient(180deg,#0b1220 0%,#0a0f1a 100%) fixed;}
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{margin:0;font:16px/1.5 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,"Noto Sans",Arial,"Apple Color Emoji","Segoe UI Emoji";color:var(--text);background:var(--bg)}
+    a{color:var(--brand);text-decoration:none} a:hover{text-decoration:underline}
+    .container{width:min(1100px,92vw);margin:auto}
+    header{position:sticky;top:0;z-index:50;background:color-mix(in oklab, var(--bg) 85%, transparent);
+      backdrop-filter:saturate(1.2) blur(12px);border-bottom:1px solid color-mix(in oklab, var(--surface) 60%, transparent)}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:.75rem 0;gap:12px}
+    .brand{display:flex;align-items:center;gap:.6rem}
+    .logo{width:40px;height:40px;border-radius:12px;display:grid;place-items:center;background:var(--surface);box-shadow:var(--shadow);font-size:22px}
+    .brand h1{font-size:1rem;margin:0}
+    .brand small{color:var(--muted)}
+    nav ul{display:flex;gap:1rem;list-style:none;margin:0;padding:0}
+    .btn{display:inline-flex;align-items:center;gap:.5rem;padding:.7rem 1rem;border-radius:12px;border:1px solid color-mix(in oklab, var(--brand) 35%, var(--surface));
+      background:linear-gradient(180deg,color-mix(in oklab, var(--brand) 12%, var(--surface)) 0%,var(--surface) 100%);font-weight:600}
+    .btn.primary{background:linear-gradient(180deg,var(--brand) 0%,var(--brand-2) 100%);color:white;border:none;box-shadow:var(--shadow)}
+    .btn.ghost{background:transparent;border-color:color-mix(in oklab, var(--muted) 30%, var(--surface))}
+    .menu-btn{display:none}
+    @media (max-width:860px){nav ul{display:none}.menu-btn{display:inline-flex}.mobile-nav{display:none;grid-template-columns:1fr;gap:.25rem;padding:.5rem}.mobile-nav.open{display:grid}.cta-wrap{display:none}}
+
+    .hero{padding:64px 0 28px}
+    @media (min-width:861px){.hero{padding:90px 0 48px}}
+    .hero-card{border:1px solid color-mix(in oklab, var(--surface) 60%, transparent);
+      background:linear-gradient(180deg,color-mix(in oklab, var(--surface) 90%, transparent) 0%, transparent 100%);
+      border-radius:24px;padding:28px;box-shadow:var(--shadow);display:grid;gap:22px}
+    .hero h2{font-size:clamp(28px,4vw,40px);line-height:1.15;margin:0}
+    .hero p{color:var(--muted);margin:0}
+    .hero-actions{display:flex;flex-wrap:wrap;gap:12px}
+    .badges{display:flex;gap:8px;flex-wrap:wrap}
+    .badge{padding:.35rem .6rem;border-radius:999px;border:1px solid color-mix(in oklab, var(--muted) 30%, var(--surface));font-size:.82rem;color:var(--muted)}
+
+    section{padding:44px 0;border-top:1px solid color-mix(in oklab, var(--surface) 60%, transparent)}
+    section h3{font-size:clamp(22px,3vw,28px);margin:0 0 .5rem}
+    .lead{color:var(--muted);margin:0 0 1rem}
+    .grid{display:grid;gap:16px}
+    @media (min-width:768px){.grid.cols-3{grid-template-columns:repeat(3,1fr)}.grid.cols-2{grid-template-columns:repeat(2,1fr)}}
+    .card{padding:18px;border-radius:16px;background:var(--surface);border:1px solid color-mix(in oklab, var(--surface) 70%, transparent);box-shadow:var(--shadow)}
+    .card h4{margin:.25rem 0 .25rem}
+    .muted{color:var(--muted)}
+    .price{font-size:1.25rem;font-weight:700}
+
+    details{background:var(--surface);border:1px solid color-mix(in oklab, var(--surface) 70%, transparent);border-radius:14px;padding:12px 14px}
+    details+details{margin-top:10px}
+    summary{cursor:pointer;font-weight:600}
+    summary:focus{outline:2px solid var(--ring);border-radius:8px}
+
+    form{display:grid;gap:10px}
+    label{font-weight:600}
+    input,textarea,select{width:100%;padding:.8rem;border-radius:12px;border:1px solid color-mix(in oklab, var(--muted) 30%, var(--surface));
+      background:color-mix(in oklab, var(--bg) 85%, transparent);color:var(--text)}
+    input:focus,textarea:focus,select:focus{outline:2px solid var(--ring);border-color:var(--ring)}
+    .row{display:grid;gap:10px}
+    @media (min-width:720px){.row{grid-template-columns:1fr 1fr}}
+
+    footer{padding:28px 0;color:var(--muted)}
+    .foot{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;border-top:1px solid color-mix(in oklab, var(--surface) 60%, transparent);padding-top:18px}
+
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}
+    .toast{position:fixed;right:16px;bottom:16px;padding:12px 14px;border-radius:12px;background:var(--surface);border:1px solid color-mix(in oklab, var(--surface) 70%, transparent);box-shadow:var(--shadow);display:none}
+    .toast.show{display:block}
+    .top-btn{position:fixed;right:16px;bottom:76px;border:none;border-radius:999px;padding:.7rem 1rem;background:var(--brand);color:#fff;display:none}
+    .top-btn.show{display:inline-flex}
+
+    /* Стили карточек услуг и тематические цвета */
+    .services-grid .service { display:grid; gap:.5rem; border:1px solid color-mix(in oklab, var(--surface) 70%, transparent) }
+    .svc-head { font-weight:700; font-size:1.05rem }
+    .service[data-type="criminal"] { border-left:4px solid #ef4444; }
+    .service[data-type="civil"]    { border-left:4px solid #0ea5e9; }
+    .service[data-type="admin"]    { border-left:4px solid #f59e0b; }
+    .service[data-type="biz"]      { border-left:4px solid #22c55e; }
+    .service[data-type="extra"]    { border-left:4px solid #8b5cf6; }
+    .service .svc-btn { margin-top:.25rem; width:max-content; }
+    .service:hover { transform: translateY(-2px); transition: .2s ease; }
   </style>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "LegalService",
-    "name": "Адвокат Коротков Артём Андреевич",
-    "url": "https://artem1995dr11.github.io/advokat-korotkov/",
-    "areaServed": ["Кинешма","Иваново","Ивановская область"],
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Кинешма",
-      "addressRegion": "Ивановская область",
-      "streetAddress": "ул. имени Островского, д. 9, офис 6",
-      "addressCountry": "RU"
-    },
-    "telephone": "+7-961-116-48-32",
-    "email": "korotkov.artem11@mail.ru",
-    "openingHoursSpecification": [{
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
-      "opens": "09:00",
-      "closes": "19:00"
-    }]
-  }
-  </script>
 </head>
 <body>
-<header>
-  <h1>Адвокат Кинешма – Коротков Артём Андреевич</h1>
-  <p>Юридическая защита по уголовным, гражданским и административным делам в Кинешме и Иваново</p>
-</header>
+  <a class="sr-only" href="#main">Пропустить к содержимому</a>
+  <header>
+    <div class="container nav">
+      <div class="brand" aria-label="Логотип и название">
+        <div class="logo" aria-hidden="true">⚖️</div>
+        <div>
+          <h1>Адвокат Коротков Артём Андреевич</h1>
+          <small>Юридическая защита и консультации</small>
+        </div>
+      </div>
+      <nav aria-label="Основная навигация">
+        <ul>
+          <li><a href="#services">Услуги</a></li>
+          <li><a href="#cases">Кейсы</a></li>
+          <li><a href="#pricing">Цены</a></li>
+          <li><a href="#faq">Вопросы</a></li>
+          <li><a href="#contact">Контакты</a></li>
+        </ul>
+      </nav>
+      <div class="cta-wrap">
+        <a class="btn ghost" href="tel:+79611164832" aria-label="Позвонить">Позвонить</a>
+        <a class="btn primary" href="#contact">Записаться</a>
+      </div>
+      <button class="btn menu-btn" id="menuBtn" aria-expanded="false" aria-controls="mobileNav">Меню</button>
+    </div>
+    <div class="container mobile-nav" id="mobileNav" role="region" aria-label="Мобильное меню">
+      <a class="btn" href="#services">Услуги</a>
+      <a class="btn" href="#cases">Кейсы</a>
+      <a class="btn" href="#pricing">Цены</a>
+      <a class="btn" href="#faq">Вопросы</a>
+      <a class="btn primary" href="#contact">Контакты</a>
+    </div>
+  </header>
 
-<section id="about">
-  <h3>Обо мне</h3>
-  <div class="card">
-    <p>Я — адвокат в Кинешме, член Адвокатской палаты Ивановской области. Оказываю помощь в уголовных, гражданских и административных делах, представляю интересы в судах Иваново и других регионов.</p>
-  </div>
-</section>
+  <main id="main">
+    <section class="hero">
+      <div class="container hero-card">
+        <div class="badges">
+          <span class="badge">Онлайн и офлайн</span>
+          <span class="badge">Конфиденциально</span>
+          <span class="badge">По всей России</span>
+        </div>
+        <h2>Защита по уголовным, гражданским и административным делам</h2>
+        <p>Консультации, подготовка документов, представительство в судах Ивановской области и по всей России.</p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#contact">Получить консультацию</a>
+          <a class="btn" href="#services">Посмотреть услуги</a>
+        </div>
+      </div>
+    </section>
 
-<section id="services">
-  <h3>Услуги</h3>
-  <div class="grid cols-3">
-    <div class="card"><h4>⚖️ Доследственная проверка</h4><p>Сбор доказательств, жалобы на отказ в возбуждении дела.</p></div>
-    <div class="card"><h4>🛡️ Допросы и очные ставки</h4><p>Присутствие на допросах, защита на следствии.</p></div>
-    <div class="card"><h4>🏠 Мера пресечения</h4><p>Ходатайства об изменении меры пресечения, апелляции.</p></div>
-  </div>
-</section>
+    <!-- SERVICES -->
+    <section id="services">
+      <div class="container">
+        <h3>Услуги</h3>
+        <p class="lead">Выберите нужное направление — подготовлю план действий и возьму на себя процессуальные шаги.</p>
 
-<section id="pricing">
-  <h3>Цены</h3>
-  <div class="grid cols-3">
-    <div class="card"><h4>🗣️ Консультация устная</h4><p>от 500 ₽</p></div>
-    <div class="card"><h4>📄 Консультация с документами</h4><p>от 1000 ₽</p></div>
-    <div class="card"><h4>✍️ Исковые заявления</h4><p>от 5000 ₽</p></div>
-  </div>
-</section>
+        <div class="grid cols-3 services-grid">
+          <article class="card service" data-type="criminal" data-topic="Уголовные — доследственная проверка">
+            <div class="svc-head">⚖️ Доследственная проверка</div>
+            <p class="muted">Защита на стадии проверки, сбор доказательств, подача ходатайств, жалобы на отказ/бездействие.</p>
+            <a class="btn svc-btn" href="#contact" data-fill="Уголовные — доследственная проверка">Запросить консультацию</a>
+          </article>
+          <article class="card service" data-type="criminal" data-topic="Уголовные — допросы, очные ставки">
+            <div class="svc-head">🛡️ Допросы и очные ставки</div>
+            <p class="muted">Участие защитника при допросах, очных ставках, опознаниях, обысках и выемках.</p>
+            <a class="btn svc-btn" href="#contact" data-fill="Уголовные — допросы, очные ставки">Запросить консультацию</a>
+          </article>
+          <article class="card service" data-type="criminal" data-topic="Уголовные — мера пресечения">
+            <div class="svc-head">🏠 Мера пресечения</div>
+            <p class="muted">Избрание/изменение меры пресечения: домашний арест вместо СИЗО. Апелляция на продление.</p>
+            <a class="btn svc-btn" href="#contact" data-fill="Уголовные — мера пресечения">Запросить консультацию</a>
+          </article>
+          <article class="card service" data-type="criminal" data-topic="Уголовные — защита в суде">
+            <div class="svc-head">📜 Защита в суде</div>
+            <p class="muted">Первая инстанция, апелляция, кассация. Переквалификация, смягчающие, компенсация вреда.</p>
+            <a class="btn svc-btn" href="#contact" data-fill="Уголовные — защита в суде">Запросить консультацию</a>
+          </article>
 
-<section id="contact">
-  <h3>Контакты</h3>
-  <div class="card">
-    <p>📍 Адрес: г. Кинешма, ул. имени Островского, д. 9, офис 6</p>
-    <p>📞 Телефон: <a href="tel:+79611164832">8‑961‑116‑48‑32</a></p>
-    <p>💬 <a href="https://wa.me/79611164832">WhatsApp</a> | <a href="https://t.me/79611164832">Telegram</a></p>
-    <p>📧 <a href="mailto:korotkov.artem11@mail.ru">korotkov.artem11@mail.ru</a></p>
-    <p><a class="btn" href="https://yandex.ru/maps/org/advokat_korotkov_a_a_/113505003403?si=5xae4uwb15t46pdb5c8cexew9c" target="_blank">Открыть в Яндекс.Картах</a></p>
-  </div>
-</section>
+          <article class="card service" data-type="civil" data-topic="Гражданские — наследство">
+            <div class="svc-head">🏛️ Наследственные споры</div>
+            <p class="muted">Восстановление сроков, оспаривание завещаний, включение имущества, доли, обязательная доля.</p>
+            <a class="btn svc-btn" href="#contact" data-fill="Гражданские — наследство">Запросить консультацию</a>
+          </article>
+          <article class="card service" data-type="civil" data-topic="Гражданские — семейные споры">
+            <div class="svc-head">👨‍👩‍👧 Семейные споры</div>
+            <p class="muted">Развод, алименты, порядок общения, место жительства ребёнка, раздел имущества супругов.</p>
+            <a class="btn svc-btn" href="#contact" data-fill="Гражданские — семейные споры">Запросить консультацию</a>
+          </article>
+          <article class="card service" data-type="civil" data-topic="Гражданские — жильё и недвижимость">
+            <div class="svc-head">🏠 Жилищные вопросы</div>
+            <p class="muted">Регистрация/выселение, споры с УК, признание права, доли, неотделимые улучшения.</p>
+            <a class="btn svc-btn" href="#contact" data-fill="Гражданские — жильё и недвижимость">Запросить консультацию</a>
+          </article>
+          <article class="card service" data-type="civil" data-topic="Гражданские — долги и взыскание">
+            <div class="svc-head">💼 Долги и взыскание</div>
+            <p class="muted">Взыскание задолженности, неустойки и убытков; защита от коллекторов; переговоры и мировые.</p>
+            <a class="btn svc-btn" href="#contact" data-fill="Гражданские — долги и взыскание">Запросить консультацию</a>
+          </article>
+          <article class="card service" data-type="civil" data-topic="Гражданские — потребители и страховые">
+            <div class="svc-head">🧾 Права потребителей / страховые</div>
+            <p class="muted">Претензии, иски, экспертизы, штраф 50% по ЗоЗПП; ОСАГО/КАСКО: доплата, неустойка, пени.</p>
+            <a class="btn svc-btn" href="#contact" data-fill="Гражданские — потребители и страховые">Запросить консультацию</a>
+          </article>
+          <article class="card service" data-type="civil" data-topic="Гражданские — возмещение ущерба">
+            <div class="svc-head">🧯 Возмещение ущерба</div>
+            <p class="muted">ДТП, пожары, затопления, вред здоровью, моральный вред: расчёт, доказательства, иск.</p>
+            <a class="btn svc-btn" href="#contact" data-fill="Гражданские — возмещение ущерба">Запросить консультацию</a>
+          </article>
 
-<footer>
-  <p>© 2025 Адвокат Коротков Артём Андреевич. Кинешма, Иваново</p>
-</footer>
+          <article class="card service" data-type="admin" data-topic="Административные — штрафы ГИБДД">
+            <div class="svc-head">🚗 Штрафы ГИБДД</div>
+            <p class="muted">Обжалование постановлений, отмена лишения, возврат прав, восстановление сроков.</p>
+            <a class="btn svc-btn" href="#contact" data-fill="Административные — штрафы ГИБДД">Запросить консультацию</a>
+          </article>
+          <article class="card service" data-type="admin" data-topic="Административные — КоАП и органы">
+            <div class="svc-head">🏢 Споры с госорганами</div>
+            <p class="muted">Оспаривание решений надзорных органов, проверок и предписаний. Защита малого бизнеса.</p>
+            <a class="btn svc-btn" href="#contact" data-fill="Административные — КоАП и органы">Запросить консультацию</a>
+          </article>
+
+          <article class="card service" data-type="biz" data-topic="Бизнес — договоры и претензии">
+            <div class="svc-head">📑 Договоры и претензии</div>
+            <p class="muted">Разработка/экспертиза договоров, претензионная работа, досудебное урегулирование.</p>
+            <a class="btn svc-btn" href="#contact" data-fill="Бизнес — договоры и претензии">Запросить консультацию</a>
+          </article>
+          <article class="card service" data-type="biz" data-topic="Бизнес — споры и арбитраж">
+            <div class="svc-head">⚙️ Коммерческие споры</div>
+            <p class="muted">Иски в арбитраже, взыскание задолженности, поставки, подряд, аренда, неустойки, убытки.</p>
+            <a class="btn svc-btn" href="#contact" data-fill="Бизнес — споры и арбитраж">Запросить консультацию</a>
+          </article>
+          <article class="card service" data-type="biz" data-topic="Бизнес — трудовые споры">
+            <div class="svc-head">👔 Трудовые споры</div>
+            <p class="muted">Незаконные увольнения, невыплата зарплаты/премий, материальная ответственность, охрана труда.</p>
+            <a class="btn svc-btn" href="#contact" data-fill="Бизнес — трудовые споры">Запросить консультацию</a>
+          </article>
+
+          <article class="card service" data-type="extra" data-topic="Дополнительно — исполнение и приставы">
+            <div class="svc-head">🔎 Исполнительное производство</div>
+            <p class="muted">Взыскание, розыск имущества, оспаривание действий ФССП, рассрочка/отсрочка исполнения.</p>
+            <a class="btn svc-btn" href="#contact" data-fill="Дополнительно — исполнение и приставы">Запросить консультацию</a>
+          </article>
+          <article class="card service" data-type="extra" data-topic="Дополнительно — экспертизы и оценка">
+            <div class="svc-head">🧪 Экспертизы и оценка</div>
+            <p class="muted">Подбор эксперта, вопросы эксперту, рецензирование заключений, альтернативные экспертизы.</p>
+            <a class="btn svc-btn" href="#contact" data-fill="Дополнительно — экспертизы и оценка">Запросить консультацию</a>
+          </article>
+          <article class="card service" data-type="extra" data-topic="Дополнительно — апелляция и кассация">
+            <div class="svc-head">🧭 Апелляция и кассация</div>
+            <p class="muted">Анализ материалов, поиск процессуальных ошибок, составление жалоб и выступление в суде.</p>
+            <a class="btn svc-btn" href="#contact" data-fill="Дополнительно — апелляция и кассация">Запросить консультацию</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CASES placeholder -->
+    <section id="cases">
+      <div class="container">
+        <h3>Кейсы</h3>
+        <p class="lead">Раздел будет заполнен реальными примерами после согласования.</p>
+        <div class="grid cols-3">
+          <article class="card"><h4>Пример кейса 1</h4><p class="muted">Описание результата и сути дела.</p></article>
+          <article class="card"><h4>Пример кейса 2</h4><p class="muted">Описание результата и сути дела.</p></article>
+          <article class="card"><h4>Пример кейса 3</h4><p class="muted">Описание результата и сути дела.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRICING -->
+    <section id="pricing">
+      <div class="container">
+        <h3>Цены</h3>
+        <p class="lead">Стоимость фиксируется до начала работы. Оформление: ордер, соглашение, чек.</p>
+        <div class="grid cols-3">
+          <article class="card"><h4>🗣️ Консультация устная</h4><p class="muted">До 1 часа, устные рекомендации.</p><p class="price">от 500 ₽</p></article>
+          <article class="card"><h4>📄 Консультация с документами</h4><p class="muted">Анализ и рекомендации по документам.</p><p class="price">от 1000 ₽</p></article>
+          <article class="card"><h4>⚖️ Ведение уголовных дел</h4><p class="muted">Стадии следствия и суда.</p><p class="price">по договорённости</p></article>
+          <article class="card"><h4>🏛️ Ведение гражданских дел</h4><p class="muted">Подготовка и представительство.</p><p class="price">по договорённости</p></article>
+          <article class="card"><h4>✍️ Исковые заявления</h4><p class="muted">Полный пакет с обоснованием.</p><p class="price">от 5000 ₽</p></article>
+          <article class="card"><h4>📅 День участия в суде</h4><p class="muted">Выезд и участие в заседании.</p><p class="price">5000 ₽</p></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq">
+      <div class="container">
+        <h3>Частые вопросы</h3>
+        <div class="grid cols-2">
+          <details>
+            <summary>Как проходит консультация?</summary>
+            <p>Возможны два формата: устная (от 500 ₽) или с изучением документов (от 1000 ₽), длительность до 1 часа. Итоги — план действий и ориентиры по срокам/стоимости.</p>
+          </details>
+          <details>
+            <summary>Работаете ли вы удалённо?</summary>
+            <p>Да. WhatsApp, Telegram, телефон, видеосвязь. Документы — по электронной почте.</p>
+          </details>
+          <details>
+            <summary>Какие гарантии результата?</summary>
+            <p>Гарантирую добросовестность, конфиденциальность и процессуальную точность. Итог зависит от фактов дела и позиции суда.</p>
+          </details>
+          <details>
+            <summary>Как заключить договор и оплатить?</summary>
+            <p>Соглашение и ордер — лично или дистанционно. Оплата наличными/безналично, выдаётся чек/квитанция.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <div class="container">
+        <h3>Контакты</h3>
+        <p class="lead">Свяжитесь любым удобным способом — отвечу в течение рабочего дня.</p>
+        <div class="grid cols-2">
+          <div class="card">
+            <form id="contactForm" aria-label="Форма связи">
+              <div class="row">
+                <div><label for="name">Имя</label><input id="name" name="name" autocomplete="name" required /></div>
+                <div><label for="phone">Телефон</label><input id="phone" name="phone" inputmode="tel" placeholder="+7" /></div>
+              </div>
+              <div><label for="msg">Сообщение</label><textarea id="msg" name="message" rows="5" required placeholder="Кратко опишите ситуацию"></textarea></div>
+              <button class="btn primary" type="submit">Отправить</button>
+              <p class="muted" style="margin:.25rem 0 0">Нажимая «Отправить», вы соглашаетесь с обработкой персональных данных.</p>
+            </form>
+          </div>
+          <div class="card" aria-label="Информация и быстрые ссылки">
+            <h4>Быстрая связь</h4>
+            <p><strong>Телефон:</strong> <a href="tel:+79611164832">8‑961‑116‑48‑32</a></p>
+            <p><strong>E-mail:</strong> <a href="mailto:korotkov.artem11@mail.ru">korotkov.artem11@mail.ru</a></p>
+            <p><strong>Адрес:</strong> г. Кинешма, ул. имени Островского, д. 9, офис 6</p>
+            <p><a class="btn" href="https://yandex.ru/maps/org/advokat_korotkov_a_a_/113505003403?si=5xae4uwb15t46pdb5c8cexew9c" target="_blank" rel="noopener">Открыть в Яндекс.Картах</a></p>
+            <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:8px">
+              <a class="btn" href="https://wa.me/79611164832" target="_blank" rel="noopener" aria-label="WhatsApp">WhatsApp</a>
+              <a class="btn" href="https://t.me/79611164832" target="_blank" rel="noopener" aria-label="Telegram">Telegram</a>
+              <a class="btn" href="mailto:korotkov.artem11@mail.ru?subject=Консультация">Email</a>
+            </div>
+            <hr style="margin:12px 0;border:none;border-top:1px solid color-mix(in oklab, var(--surface) 60%, transparent)">
+            <p class="muted">Пн–Пт 09:00–19:00 • Сб по записи</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container foot">
+      <p>© <span id="year"></span> Адвокат Коротков Артём Андреевич</p>
+      <div style="display:flex;gap:10px;flex-wrap:wrap">
+        <a href="#" onclick="openPolicy(event)">Политика конфиденциальности</a>
+        <span aria-hidden="true">•</span>
+        <a href="#contact">Связаться</a>
+      </div>
+    </div>
+  </footer>
+
+  <button class="top-btn" id="topBtn" aria-label="Наверх">↑</button>
+  <div class="toast" id="toast" role="status" aria-live="polite">Спасибо! Письмо сформировано в вашем почтовом клиенте.</div>
+
+  <dialog id="policy" style="max-width:min(720px,92vw);border:none;border-radius:16px;padding:20px;background:var(--bg);color:var(--text);box-shadow:var(--shadow)">
+    <h4 style="margin-top:0">Политика конфиденциальности</h4>
+    <p class="muted">Данные используются исключительно для связи по вашему обращению и не передаются третьим лицам без правового основания.</p>
+    <form method="dialog"><button class="btn">Закрыть</button></form>
+  </dialog>
+
+  <script>
+    // год в подвале
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // плавная прокрутка
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click',e=>{
+        const id=a.getAttribute('href');
+        if(id.length>1){
+          e.preventDefault();
+          document.querySelector(id)?.scrollIntoView({behavior:'smooth',block:'start'});
+          mobileNav.classList.remove('open'); menuBtn.setAttribute('aria-expanded','false');
+        }
+      });
+    });
+
+    // мобильное меню
+    const menuBtn=document.getElementById('menuBtn');
+    const mobileNav=document.getElementById('mobileNav');
+    menuBtn?.addEventListener('click',()=>{
+      const open=mobileNav.classList.toggle('open');
+      menuBtn.setAttribute('aria-expanded',String(open));
+    });
+
+    // кнопка наверх
+    const topBtn=document.getElementById('topBtn');
+    const onScroll=()=>{ if(window.scrollY>500){topBtn.classList.add('show')}else{topBtn.classList.remove('show')} };
+    window.addEventListener('scroll',onScroll,{passive:true});
+    topBtn.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+
+    // политика
+    const policyDialog=document.getElementById('policy');
+    window.openPolicy=(e)=>{e.preventDefault();policyDialog.showModal()}
+
+    // автоподстановка темы из карточки
+    document.querySelectorAll('.svc-btn').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        setTimeout(() => {
+          const topic = e.currentTarget.getAttribute('data-fill');
+          const select = document.getElementById('topic');
+          const msg = document.getElementById('msg');
+          if (select) select.value = 'Консультация';
+          if (msg && topic) msg.value = `[${topic}]\n\nКратко опишите ситуацию:`;
+          document.getElementById('name')?.focus();
+        }, 50);
+      });
+    });
+
+    // форма (mailto-fallback)
+    const form=document.getElementById('contactForm');
+    const toast=document.getElementById('toast');
+    form?.addEventListener('submit',e=>{
+      e.preventDefault();
+      const name=form.name.value.trim();
+      const phone=form.phone.value.trim();
+      const message=form.message.value.trim();
+      if(!name || !message){ alert('Пожалуйста, укажите имя и краткое описание.'); return; }
+      const subject=encodeURIComponent(`Запрос: Консультация — ${name}`);
+      const body=encodeURIComponent(`Имя: ${name}\nТелефон: ${phone}\n\nСообщение:\n${message}`);
+      window.location.href=`mailto:korotkov.artem11@mail.ru?subject=${subject}&body=${body}`;
+      toast.classList.add('show'); setTimeout(()=>toast.classList.remove('show'),4000);
+      form.reset();
+    });
+  </script>
 </body>
 </html>
