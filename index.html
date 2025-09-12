@@ -11,6 +11,7 @@
   <meta property="og:url" content="https://artem1995dr11.github.io/advokat-korotkov/" />
   <meta name="robots" content="index,follow" />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64'%3E%3Ctext y='50' x='8' font-size='48'%3E⚖️%3C/text%3E%3C/svg%3E">
+
   <style>
     :root{
       --bg:#ffffff;--text:#0f172a;--muted:#475569;--brand:#2b6cb0;--brand-2:#1e40af;
@@ -18,33 +19,63 @@
     }
     @media (prefers-color-scheme: dark){
       :root{--bg:#0b1220;--text:#e5e7eb;--muted:#96a0b5;--brand:#60a5fa;--brand-2:#3b82f6;--surface:#0f172a;--ring:#60a5fa;}
-      body{background:linear-gradient(180deg,#0b1220 0%,#0a0f1a 100%) fixed;}
     }
+
     *{box-sizing:border-box}
     html,body{height:100%}
-    body{margin:0;font:16px/1.5 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,"Noto Sans",Arial,"Apple Color Emoji","Segoe UI Emoji";color:var(--text);background:var(--bg)}
-    a{color:var(--brand);text-decoration:none} a:hover{text-decoration:underline}
+
+    /* Фон сайта: картинка + мягкая затемняющая вуаль для читаемости текста */
+    body{
+      margin:0;
+      font:16px/1.5 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,"Noto Sans",Arial,"Apple Color Emoji","Segoe UI Emoji";
+      color:var(--text);
+      background: url("bg.png") no-repeat center center fixed; background-size: cover;
+      background-size: cover, cover, auto;
+    }
+
+    a{color:var(--brand);text-decoration:none}
+    a:hover{text-decoration:none}
+
     .container{width:min(1100px,92vw);margin:auto}
-    header{position:sticky;top:0;z-index:50;background:color-mix(in oklab, var(--bg) 85%, transparent);
-      backdrop-filter:saturate(1.2) blur(12px);border-bottom:1px solid color-mix(in oklab, var(--surface) 60%, transparent)}
+
+    header{
+      position:sticky;top:0;z-index:50;
+      background:color-mix(in oklab, var(--bg) 85%, transparent);
+      backdrop-filter:saturate(1.2) blur(12px);
+      border-bottom:1px solid color-mix(in oklab, var(--surface) 60%, transparent)
+    }
     .nav{display:flex;align-items:center;justify-content:space-between;padding:.75rem 0;gap:12px}
     .brand{display:flex;align-items:center;gap:.6rem}
     .logo{width:40px;height:40px;border-radius:12px;display:grid;place-items:center;background:var(--surface);box-shadow:var(--shadow);font-size:22px}
     .brand h1{font-size:1rem;margin:0}
     .brand small{color:var(--muted)}
     nav ul{display:flex;gap:1rem;list-style:none;margin:0;padding:0}
-    .btn{display:inline-flex;align-items:center;gap:.5rem;padding:.7rem 1rem;border-radius:12px;border:1px solid color-mix(in oklab, var(--brand) 35%, var(--surface));
-      background:linear-gradient(180deg,color-mix(in oklab, var(--brand) 12%, var(--surface)) 0%,var(--surface) 100%);font-weight:600}
-    .btn.primary{background:linear-gradient(180deg,var(--brand) 0%,var(--brand-2) 100%);color:white;border:none;box-shadow:var(--shadow)}
+
+    /* Кнопки — одинаково выглядят на ПК и мобиле */
+    .btn:link,
+    .btn:visited,
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;gap:.5rem;
+      padding:.7rem 1rem;border-radius:12px;border:1px solid color-mix(in oklab, var(--brand) 35%, var(--surface));
+      background:linear-gradient(180deg,color-mix(in oklab, var(--brand) 12%, var(--surface)) 0%,var(--surface) 100%);
+      font-weight:700;color:var(--text)!important; text-decoration:none!important;
+      cursor:pointer; user-select:none; transition:transform .06s ease, box-shadow .2s ease, opacity .2s ease;
+    }
+    .btn:hover{transform:translateY(-1px)}
+    .btn.primary{background:linear-gradient(180deg,var(--brand) 0%,var(--brand-2) 100%);color:white!important;border:none;box-shadow:var(--shadow)}
     .btn.ghost{background:transparent;border-color:color-mix(in oklab, var(--muted) 30%, var(--surface))}
+    .btn:active{transform:translateY(0)}
+
     .menu-btn{display:none}
     @media (max-width:860px){nav ul{display:none}.menu-btn{display:inline-flex}.mobile-nav{display:none;grid-template-columns:1fr;gap:.25rem;padding:.5rem}.mobile-nav.open{display:grid}.cta-wrap{display:none}}
 
     .hero{padding:64px 0 28px}
     @media (min-width:861px){.hero{padding:90px 0 48px}}
-    .hero-card{border:1px solid color-mix(in oklab, var(--surface) 60%, transparent);
-      background:linear-gradient(180deg,color-mix(in oklab, var(--surface) 90%, transparent) 0%, transparent 100%);
-      border-radius:24px;padding:28px;box-shadow:var(--shadow);display:grid;gap:22px}
+    .hero-card{
+      border:1px solid color-mix(in oklab, var(--surface) 60%, transparent);
+      background:linear-gradient(180deg,color-mix(in oklab, var(--surface) 92%, transparent) 0%, color-mix(in oklab, var(--surface) 70%, transparent) 100%);
+      border-radius:24px;padding:28px;box-shadow:var(--shadow);display:grid;gap:22px
+    }
     .hero h2{font-size:clamp(28px,4vw,40px);line-height:1.15;margin:0}
     .hero p{color:var(--muted);margin:0}
     .hero-actions{display:flex;flex-wrap:wrap;gap:12px}
@@ -133,11 +164,11 @@
       </div>
       <nav aria-label="Основная навигация">
         <ul>
-          <li><a href="#services">Услуги</a></li>
-          <li><a href="#cases">Кейсы</a></li>
-          <li><a href="#pricing">Цены</a></li>
-          <li><a href="#faq">Вопросы</a></li>
-          <li><a href="#contact">Контакты</a></li>
+          <li><a class="btn ghost" href="#services">Услуги</a></li>
+          <li><a class="btn ghost" href="#cases">Кейсы</a></li>
+          <li><a class="btn ghost" href="#pricing">Цены</a></li>
+          <li><a class="btn ghost" href="#faq">Вопросы</a></li>
+          <li><a class="btn primary" href="#contact">Контакты</a></li>
         </ul>
       </nav>
       <div class="cta-wrap">
@@ -363,8 +394,8 @@
           </div>
           <div class="card" aria-label="Информация и быстрые ссылки">
             <h4>Быстрая связь</h4>
-            <p><strong>Телефон:</strong> <a href="tel:+79611164832">8‑961‑116‑48‑32</a></p>
-            <p><strong>E-mail:</strong> <a href="mailto:korotkov.artem11@mail.ru">korotkov.artem11@mail.ru</a></p>
+            <p><strong>Телефон:</strong> <a class="btn" href="tel:+79611164832">8-961-116-48-32</a></p>
+            <p><strong>E-mail:</strong> <a class="btn" href="mailto:korotkov.artem11@mail.ru">korotkov.artem11@mail.ru</a></p>
             <p><strong>Адрес:</strong> г. Кинешма, ул. имени Островского, д. 9, офис 6</p>
             <p><a class="btn" href="https://yandex.ru/maps/org/advokat_korotkov_a_a_/113505003403?si=5xae4uwb15t46pdb5c8cexew9c" target="_blank" rel="noopener">Открыть в Яндекс.Картах</a></p>
             <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:8px">
