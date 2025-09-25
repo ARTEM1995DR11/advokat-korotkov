@@ -126,7 +126,8 @@ header, header h1, header small, header nav a, header .btn { color:#fff !importa
     .service[data-type="extra"]    { border-left:4px solid #8b5cf6; }
     .service .svc-btn { margin-top:.25rem; width:max-content; }
     .service:hover { transform: translateY(-2px); transition: .2s ease; }
-  </style>
+  header .phone, header .phone a { white-space: nowrap; }
+</style>
 <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -151,6 +152,54 @@ header, header h1, header small, header nav a, header .btn { color:#fff !importa
     }]
   }
   </script>
+<!-- Mobile fixed-bg via ::before (CSS-only, no markup changes) -->
+<style>
+  /* Target touch devices; don't affect desktop */
+  @media (hover: none) and (pointer: coarse) {
+    /* Turn off the body's own background to avoid white flash/tearing */
+    body{
+      background: none !important;
+    }
+    /* Pseudo-element holds the background image and stays fixed */
+    body::before{
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      background-image: url("bg.png");
+      background-repeat: no-repeat;
+      background-position: center top;
+      background-size: cover;
+      /* iOS compositing hint to prevent blanking when DevTools open / during scroll */
+      transform: translateZ(0);
+      will-change: transform;
+      /* Optional deep fallback color behind the image (won't be seen once image loads) */
+      background-color: #00142d;
+    }
+  }
+
+  /* Extra guard for iOS Safari (older versions sometimes ignore the media query) */
+  @supports (-webkit-touch-callout: none) {
+    @media (max-width: 812px) {
+      body{
+        background: none !important;
+      }
+      body::before{
+        content: "";
+        position: fixed;
+        inset: 0;
+        z-index: -1;
+        background-image: url("bg.png");
+        background-repeat: no-repeat;
+        background-position: center top;
+        background-size: cover;
+        transform: translateZ(0);
+        will-change: transform;
+        background-color: #00142d;
+      }
+    }
+  }
+</style>
 </head>
 <body>
 <a class="sr-only" href="#main">Пропустить к содержимому</a>
@@ -159,7 +208,7 @@ header, header h1, header small, header nav a, header .btn { color:#fff !importa
 <div aria-label="Логотип и название" class="brand">
 <div class="logo" aria-hidden="true"><img src="logos/custom.png" alt="Логотип адвоката" style="width:52px;height:52px;"></div>
 <div>
-<h1>Адвокат Кинешма – Коротков Артём Андреевич <span style="font-weight:600; font-size:1em; margin-left:10px;"><a href="tel:+79611164832" style="color:inherit; text-decoration:none;">8-961-116-48-32</a></span></h1>
+<h1>Адвокат Кинешма – Коротков Артём Андреевич <span class="phone" style="font-weight:600; font-size:1em; margin-left:10px;"><a href="tel:+79611164832" style="color:inherit; text-decoration:none;">8&#8209;961&#8209;116&#8209;48&#8209;32</a></span></h1>
 <small>Официальный персональный сайт адвоката</small>
 </div>
 </div>
@@ -203,8 +252,33 @@ header, header h1, header small, header nav a, header .btn { color:#fff !importa
 </div>
 </section>
 <!-- ABOUT -->
-<section id="about">
-<div class="container"><h3>Обо мне</h3><p class="lead">Я — адвокат Коротков Артём Андреевич (реестровый № 37/675). Оказываю юридическую помощь в Кинешме, Иваново и Ивановской области по уголовным, гражданским и административным делам.</p><ul style="margin:.5rem 0 0; padding-left:1.1rem"><li>Опыт защиты на стадиях доследственной проверки, предварительного следствия, в судах первой, апелляционной и кассационной инстанций.</li><li>Основные направления: уголовные дела (защита и помощь потерпевшим), семейные и наследственные споры, жилищные и имущественные конфликты, административные дела, представительство бизнеса.</li></ul><p>Гарантирую профессиональную защиту, конфиденциальность и индивидуальный подход.</p></div>
+<section id="about" style="padding:clamp(36px,6vw,88px) 0; width:100%;">
+  <div class="container" style="max-width:1100px; margin:0 auto;">
+    <h3 style="margin:0 0 .75rem 0; font-size:clamp(26px,3vw,40px); font-weight:800; color:#8A1E23; letter-spacing:.2px;">
+      ОБО МНЕ
+    </h3>
+
+    <p style="margin:0 0 1rem 0; font-size:clamp(17px,1.6vw,20px); color:#000000; font-weight:700; line-height:1.85;">
+      Я — адвокат <strong>Коротков Артём Андреевич</strong> (реестровый №&nbsp;37/675).
+      Помогаю в уголовных, гражданских и административных делах в Кинешме, Иваново и по всей области.
+      Работаю на результат: профессиональная защита, точная процессуальная стратегия и честная коммуникация.
+    </p>
+
+    <p style="margin:1rem 0; font-size:clamp(16px,1.4vw,18px); color:#000000; font-weight:700;">
+      <strong>Ключевые направления:</strong> уголовные дела (защита и представление потерпевших), семейные и наследственные споры,
+      жилищные и имущественные споры, административные дела, споры со страховыми и органами власти, представительство интересов бизнеса.
+    </p>
+
+    <ul style="margin:.25rem 0 1rem 1rem; padding:0; list-style:disc; color:#000000; font-size:clamp(16px,1.4vw,18px); font-weight:700; line-height:1.85;">
+      <li>Защита на стадиях доследственной проверки, предварительного следствия и в судах всех инстанций.</li>
+      <li>Стратегия «от фактов к праву»: фиксация доказательств, процессуальная чистота, тактика по стадиям.</li>
+      <li>Конфиденциальность, понятные сроки и прогнозируемый бюджет работы.</li>
+    </ul>
+
+    <p style="margin:1rem 0 0 0; font-size:clamp(16px,1.4vw,18px); color:#000000; font-weight:700;">
+      Оцениваю перспективы дела честно и подробно. Нужна точная правовая позиция и системная работа — обращайтесь.
+    </p>
+  </div>
 </section>
 <!-- SERVICES -->
 <section id="services">
