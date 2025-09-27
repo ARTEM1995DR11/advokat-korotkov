@@ -127,6 +127,59 @@ header, header h1, header small, header nav a, header .btn { color:#fff !importa
     .service .svc-btn { margin-top:.25rem; width:max-content; }
     .service:hover { transform: translateY(-2px); transition: .2s ease; }
   header .phone, header .phone a { white-space: nowrap; }
+
+/* Social links */
+.social-links { text-align:center; margin-top: 12px; }
+.social-icons { display:flex; justify-content:center; align-items:center; gap:14px; flex-wrap:wrap; }
+.social-icons img { display:block; transition: transform .18s ease; }
+.social-icons img.icon-vk { width:80px; height:80px; border-radius:12px; object-fit:cover; background:none; }
+.social-icons img.icon-telegram,
+.social-icons img.icon-whatsapp,
+.social-icons img.icon-avito { width:64px; height:64px; border-radius:50%; object-fit:cover; }
+.social-icons img.icon-2gis,
+.social-icons img.icon-yamaps,
+.social-icons img.icon-yaservices,
+.social-icons img.icon-garant { width:110px; height:68px; border-radius:14px; object-fit:cover; }
+.social-icons img:hover { transform: translateY(-2px); }
+
+/* WhatsApp rectangular with text */
+.social-icons img.icon-whatsapp {
+  width: 180px;          /* enough to show logo + "WhatsApp" text */
+  height: auto;          /* keep aspect ratio of the provided SVG */
+  border-radius: 12px;   /* soft corners to match VK */
+  object-fit: contain;   /* don't crop text */
+  background: none;      /* respect original SVG background */
+  padding: 0;
+  border: none;
+}
+
+/* Social links layout */
+.social-links { text-align:center; margin-top: 12px; }
+.social-icons { display:flex; justify-content:center; align-items:center; gap:14px; flex-wrap:wrap; }
+.social-icons img { display:block; transition: transform .18s ease; }
+
+/* VK: square big */
+.social-icons img.icon-vk { width:80px; height:80px; border-radius:12px; object-fit:cover; background:none; }
+
+/* WhatsApp: rectangular on white card (text visible) */
+.social-icons img.icon-whatsapp.card-white {
+  width: 200px; height:auto; border-radius:12px;
+  object-fit:contain; background:#ffffff; padding:8px; box-shadow: 0 2px 6px rgba(0,0,0,.08);
+}
+
+/* Telegram: circular, no white border */
+.social-icons img.icon-telegram {
+  width:72px; height:72px; border-radius:50%; object-fit:cover; background:none;
+}
+
+.social-icons img.icon-2gis,
+.social-icons img.icon-yamaps,
+.social-icons img.icon-yaservices,
+.social-icons img.icon-garant { width:110px; height:68px; border-radius:14px; object-fit:cover; }
+
+.social-icons img.icon-avito { width:64px; height:64px; border-radius:50%; object-fit:cover; }
+
+.social-icons img:hover { transform: translateY(-2px); }
 </style>
 <script type="application/ld+json">
   {
@@ -206,9 +259,9 @@ header, header h1, header small, header nav a, header .btn { color:#fff !importa
 <header>
 <div class="container nav">
 <div aria-label="Логотип и название" class="brand">
-<div class="logo" aria-hidden="true"><img src="logos/custom.png" alt="Логотип адвоката" style="width:52px;height:52px;"></div>
+<div aria-hidden="true" class="logo"><img alt="Логотип адвоката" src="custom.png" style="width:52px;height:52px;"/></div>
 <div>
-<h1>Адвокат Кинешма – Коротков Артём Андреевич <span class="phone" style="font-weight:600; font-size:1em; margin-left:10px;"><a href="tel:+79611164832" style="color:inherit; text-decoration:none;">8&#8209;961&#8209;116&#8209;48&#8209;32</a></span></h1>
+<h1>Адвокат Кинешма – Коротков Артём Андреевич <span class="phone" style="font-weight:600; font-size:1em; margin-left:10px;"><a href="tel:+79611164832" style="color:inherit; text-decoration:none;">8‑961‑116‑48‑32</a></span></h1>
 <small>Официальный персональный сайт адвоката</small>
 </div>
 </div>
@@ -253,32 +306,28 @@ header, header h1, header small, header nav a, header .btn { color:#fff !importa
 </section>
 <!-- ABOUT -->
 <section id="about" style="padding:clamp(36px,6vw,88px) 0; width:100%;">
-  <div class="container" style="max-width:1100px; margin:0 auto;">
-    <h3 style="margin:0 0 .75rem 0; font-size:clamp(26px,3vw,40px); font-weight:800; color:#8A1E23; letter-spacing:.2px;">
+<div class="container" style="max-width:1100px; margin:0 auto;">
+<h3 style="margin:0 0 .75rem 0; font-size:clamp(26px,3vw,40px); font-weight:800; color:#8A1E23; letter-spacing:.2px;">
       ОБО МНЕ
     </h3>
-
-    <p style="margin:0 0 1rem 0; font-size:clamp(17px,1.6vw,20px); color:#000000; font-weight:700; line-height:1.85;">
-      Я — адвокат <strong>Коротков Артём Андреевич</strong> (реестровый №&nbsp;37/675).
+<p style="margin:0 0 1rem 0; font-size:clamp(17px,1.6vw,20px); color:#000000; font-weight:700; line-height:1.85;">
+      Я — адвокат <strong>Коротков Артём Андреевич</strong> (реестровый № 37/675).
       Помогаю в уголовных, гражданских и административных делах в Кинешме, Иваново и по всей области.
       Работаю на результат: профессиональная защита, точная процессуальная стратегия и честная коммуникация.
     </p>
-
-    <p style="margin:1rem 0; font-size:clamp(16px,1.4vw,18px); color:#000000; font-weight:700;">
-      <strong>Ключевые направления:</strong> уголовные дела (защита и представление потерпевших), семейные и наследственные споры,
+<p style="margin:1rem 0; font-size:clamp(16px,1.4vw,18px); color:#000000; font-weight:700;">
+<strong>Ключевые направления:</strong> уголовные дела (защита и представление потерпевших), семейные и наследственные споры,
       жилищные и имущественные споры, административные дела, споры со страховыми и органами власти, представительство интересов бизнеса.
     </p>
-
-    <ul style="margin:.25rem 0 1rem 1rem; padding:0; list-style:disc; color:#000000; font-size:clamp(16px,1.4vw,18px); font-weight:700; line-height:1.85;">
-      <li>Защита на стадиях доследственной проверки, предварительного следствия и в судах всех инстанций.</li>
-      <li>Стратегия «от фактов к праву»: фиксация доказательств, процессуальная чистота, тактика по стадиям.</li>
-      <li>Конфиденциальность, понятные сроки и прогнозируемый бюджет работы.</li>
-    </ul>
-
-    <p style="margin:1rem 0 0 0; font-size:clamp(16px,1.4vw,18px); color:#000000; font-weight:700;">
+<ul style="margin:.25rem 0 1rem 1rem; padding:0; list-style:disc; color:#000000; font-size:clamp(16px,1.4vw,18px); font-weight:700; line-height:1.85;">
+<li>Защита на стадиях доследственной проверки, предварительного следствия и в судах всех инстанций.</li>
+<li>Стратегия «от фактов к праву»: фиксация доказательств, процессуальная чистота, тактика по стадиям.</li>
+<li>Конфиденциальность, понятные сроки и прогнозируемый бюджет работы.</li>
+</ul>
+<p style="margin:1rem 0 0 0; font-size:clamp(16px,1.4vw,18px); color:#000000; font-weight:700;">
       Оцениваю перспективы дела честно и подробно. Нужна точная правовая позиция и системная работа — обращайтесь.
     </p>
-  </div>
+<div class="social-links"><h3 style="color:#8A1E23; margin:12px 0; font-weight:800;">Найдите меня также здесь:</h3><div class="social-icons"><a href="https://vk.com/" rel="noopener" target="_blank"><img alt="VK" class="icon-vk" src="icons/vk.svg"/></a><a href="https://wa.me/" rel="noopener" target="_blank"><img alt="WhatsApp" class="icon-whatsapp card-white" src="icons/whatsapp.svg"/></a><a href="https://t.me/" rel="noopener" target="_blank"><img alt="Telegram" class="icon-telegram" src="icons/telegram.svg"/></a><a href="https://2gis.ru/" rel="noopener" target="_blank"><img alt="2ГИС" class="icon-2gis" src="icons/2gis.jpg"/></a><a href="https://yandex.ru/maps/" rel="noopener" target="_blank"><img alt="Яндекс.Карты" class="icon-yamaps" src="icons/yandex-maps.webp"/></a><a href="https://uslugi.yandex.ru/" rel="noopener" target="_blank"><img alt="Яндекс.Услуги" class="icon-yaservices" src="icons/yandex-services.webp"/></a><a href="https://www.avito.ru/" rel="noopener" target="_blank"><img alt="Avito" class="icon-avito" src="icons/avito.webp"/></a><a href="https://www.garant.ru/" rel="noopener" target="_blank"><img alt="Гарант" class="icon-garant" src="icons/garant.webp"/></a></div></div></div>
 </section>
 <!-- SERVICES -->
 <section id="services">

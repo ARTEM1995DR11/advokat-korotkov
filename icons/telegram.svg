@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 240 240">
+  <defs>
+    <linearGradient id="tg_a" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#37aee2"/>
+      <stop offset="1" stop-color="#1e96c8"/>
+    </linearGradient>
+  </defs>
+  <circle cx="120" cy="120" r="120" fill="url(#tg_a)"/>
+  <path d="M179.7 72.8c2.9-1.1 5.7 1.7 4.9 4.7l-25.5 120.1c-.8 3.7-5 5.2-8 3l-37.9-27.9-20.5 17.7c-2.3 2-5.9.9-6.7-2.1l-9.3-35.1-31.3-9.9c-3.5-1.1-3.7-6-.4-7.5l134.7-62.9z" fill="#fff"/>
+  <path d="M103.1 152.4l-.7 26.9c2.5 0 5.7-1 7.4-2.4l17.9-15.4 36.9 27.1c3 2.2 7.2.8 8-3l25.5-120.1c.5-2.5-.7-4.4-2.5-5.3L103.1 152.4z" fill="#d2ecf9"/>
+  <path d="M89.8 170.8c-2.2.2-4.2-1.3-4.8-3.5l-9.3-35.1L176 78.9c2.3-.9 4.4 1.7 2.5 3.3l-86.1 75.1-2.6 13.5z" fill="#b5d9ef"/>
+</svg>
