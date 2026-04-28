@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://artem1995dr11.github.io/advokat-korotkov/sitemap.xml
